@@ -3,6 +3,8 @@ package com.example.yikezhong123.Module;
 import com.example.yikezhong123.net.AdApi;
 import com.example.yikezhong123.net.AdApiService;
 import com.example.yikezhong123.net.Api;
+import com.example.yikezhong123.net.DuanZiApi;
+import com.example.yikezhong123.net.DuanZiApiService;
 import com.example.yikezhong123.net.JokesApi;
 import com.example.yikezhong123.net.JokesApiService;
 import com.example.yikezhong123.net.MyInterceptor;
@@ -52,5 +54,16 @@ public class HttpModule {
         JokesApiService jokesApiService = retrofit.create(JokesApiService.class);
         return JokesApi.getJokes(jokesApiService);
     }
-
+    @Provides
+    DuanZiApi provideDuanZiApi(OkHttpClient.Builder builder){
+        builder.addInterceptor(new MyInterceptor());
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Api.URL)
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(builder.build())
+                .build();
+        DuanZiApiService duanZiApiService = retrofit.create(DuanZiApiService.class);
+        return DuanZiApi.getDuanZiApi(duanZiApiService);
+    }
 }

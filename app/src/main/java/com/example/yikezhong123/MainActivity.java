@@ -15,6 +15,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.yikezhong123.ui.Recommend.TuiJianFragment;
+import com.example.yikezhong123.ui.duanzi.Frag_duanzi;
+import com.example.yikezhong123.ui.shiping.Frag_shiping;
 import com.example.yikezhong123.ui.sliding.login.Login1Activity;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FrameLayout mFlout;
     private SimpleDraweeView my_head;
     private TextView my_name;
+    private int currentIndex = 1;
     /**
      * 推荐
      */
@@ -43,6 +46,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private RadioGroup mRg;
     private SlidingMenu menu;
     private LinearLayout lin;
+    private TuiJianFragment tuiJianFragment;
+    private Frag_duanzi frag_duanzi;
+    private Frag_shiping frag_shiping;
 
 
     @Override
@@ -51,21 +57,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         initView();
         fragmentManager = getSupportFragmentManager();
-        TuiJianFragment tuiJianFragment = new TuiJianFragment();
+         tuiJianFragment = new TuiJianFragment();
+          frag_duanzi = new Frag_duanzi();
+        frag_shiping = new Frag_shiping();
+
         fragmentManager.beginTransaction().replace(R.id.flout, tuiJianFragment).commit();
-        //getMenu();
+        getMenu();
         //设置点击事件
-        //setLisenter();
+        setLisenter();
 
     }
 
 
 
-    /*private void getMenu() {
+    private void getMenu() {
         menu = new SlidingMenu(this);
         menu.setMode(SlidingMenu.LEFT);
-       *//* //滑动显示的布局文件
-        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);*//*
+       /* //滑动显示的布局文件
+        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);*/
         //触摸哪里可以发生滑动
         menu.attachToActivity(this, SlidingMenu.SLIDING_WINDOW);
         //屏幕宽度
@@ -76,12 +85,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         menu.setFadeDegree(0.35f);
 
         //为侧滑菜单设置布局
-        *//* menu.setMenu(R.layout.sliding_left);*//*
-        //View lview = LayoutInflater.from(MainActivity.this).inflate(R.layout.sliding_left, null);
-       // menu.setMenu(lview);
+        /* menu.setMenu(R.layout.sliding_left);*/
+
+
+        View lview = LayoutInflater.from(MainActivity.this).inflate(R.layout.sliding_left, null);
+        menu.setMenu(lview);
         //查找侧滑菜单里面的
-       *//* my_head = menu.findViewById(R.id.my_head);
-        my_name = menu.findViewById(R.id.my_name);*//*
+       /* my_head = menu.findViewById(R.id.my_head);
+        my_name = menu.findViewById(R.id.my_name);*/
         lin = menu.findViewById(R.id.lin1);
         lin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,9 +102,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
-        *//* my_head.setOnClickListener(this);*//*
+        /* my_head.setOnClickListener(this);*/
     }
+
+
+
     public void setLisenter() {
+        //侧拉
         mNameImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -104,7 +119,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
-    }*/
+        //底部导航
+
+        mRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId) {
+                    case R.id.btn1:
+                        //首页
+                        if (currentIndex == 1) {
+                            return;
+                        }
+                        currentIndex = 1;
+                        fragmentManager.beginTransaction().replace(R.id.flout,tuiJianFragment ).commit();
+                        break;
+                    case R.id.btn2:
+                        if (currentIndex == 2) {
+                            return;
+                        }
+                        currentIndex = 2;
+                        fragmentManager.beginTransaction().replace(R.id.flout, frag_duanzi).commit();
+                        break;
+                    case R.id.btn3:
+                        if (currentIndex == 3) {
+                            return;
+                        }
+                        currentIndex = 3;
+                        fragmentManager.beginTransaction().replace(R.id.flout, frag_shiping).commit();
+                        break;
+
+
+                }
+            }
+        });
+
+    }
 
     private void initView() {
         mNameImage = (SimpleDraweeView) findViewById(R.id.name_image);
@@ -119,6 +168,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mNameImage.setImageURI(uri);
         mNameImage.setOnClickListener(this);
     }
+
+
 
     @Override
     public void onClick(View v) {
@@ -145,4 +196,3 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }*/
 }
-

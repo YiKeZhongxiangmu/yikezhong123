@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.VideoView;
 
+import com.bumptech.glide.Glide;
 import com.example.yikezhong123.R;
 import com.example.yikezhong123.bean.JokesBean;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -19,6 +20,7 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import java.util.List;
 
 import cn.jzvd.JZVideoPlayerStandard;
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 
 public class RecommendAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
@@ -52,9 +54,13 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         jViewHolder.tv5.setText(dataBean.getWorkDesc());
 
         String url = dataBean.getVideoUrl();
-        jViewHolder.video.setUp(url,JZVideoPlayerStandard.SCREEN_LAYOUT_NORMAL,"");
-        Uri uri = Uri.parse("http://p.qpic.cn/videoyun/0/2449_43b6f696980311e59ed467f22794e792_1/640");
-        jViewHolder.video.thumbImageView.setImageURI(uri);
+        jViewHolder.video.setUp("http://ssb-video.oss-cn-qingdao.aliyuncs.com/Video_1003_20161027140007.mp4"
+                , JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, "播放视频的标题，可以为空");
+//        jcVideoPlayerStandard.loop  = true;//是否循环播放
+
+        Glide.with(context).load("http://p.qpic.cn/videoyun/0/2449_43b6f696980311e59ed467f22794e792_1/640")
+                .into(jViewHolder.video.thumbImageView);
+
 
         /*jViewHolder.video.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -75,7 +81,7 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     private class JViewHolder extends RecyclerView.ViewHolder {
 
         private final SimpleDraweeView image;
-        private final JZVideoPlayerStandard video;
+        private final JCVideoPlayerStandard video;
         private final TextView tv1;
         private final TextView tv2;
         private final TextView tv3;
