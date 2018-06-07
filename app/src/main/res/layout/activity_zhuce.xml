@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/loginbackground"
-    tools:context=".ui.sliding.login.Login2Activity">
+    android:background="@drawable/drawerlayout_background1"
+    tools:context=".ui.sliding.login.ZhuceActivity">
 
     <ImageView
         android:id="@+id/login_back"
@@ -17,13 +17,13 @@
         android:src="@drawable/login_back"/>
 
     <TextView
-        android:id="@+id/zhuce"
+        android:id="@+id/yiyou"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginRight="10dp"
         android:layout_alignParentRight="true"
-        android:text="注册账号"/>
+        android:text="已有账号?"/>
 
     <ImageView
         android:id="@+id/homepage"
@@ -35,7 +35,7 @@
         android:src="@drawable/homepage" />
 
     <EditText
-        android:id="@+id/login_mobile"
+        android:id="@+id/phone"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -44,7 +44,7 @@
         android:background="@drawable/exit_background"
         android:textSize="15dp"
         android:textColor="#B0ADAF"
-        android:hint="账号"/>
+        android:hint="请输入手机号"/>
 
     <EditText
         android:id="@+id/login_pwd"
@@ -52,14 +52,14 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/login_mobile"
+        android:layout_below="@+id/phone"
         android:background="@drawable/exit_background"
         android:textSize="15dp"
         android:textColor="#B0ADAF"
-        android:hint="密码"/>
+        android:hint="输入大小写和数字,密码不能超过8位"/>
 
     <Button
-        android:id="@+id/loginBtn"
+        android:id="@+id/zhuceBtn"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/login_pwd"
@@ -67,18 +67,7 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/login_buttonbackground"
         android:textColor="#fff"
-        android:text="登录"/>
-
-    <TextView
-        android:id="@+id/wangjipwd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#959091"
-        android:layout_below="@+id/loginBtn"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="105dp"
-        android:layout_marginTop="10dp"
-        android:text="忘记密码"/>
+        android:text="注册"/>
 
     <TextView
         android:id="@+id/youkelogin"
@@ -86,7 +75,7 @@
         android:layout_height="wrap_content"
         android:textColor="#959091"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/wangjipwd"
-        android:layout_marginTop="20dp"
+        android:layout_below="@+id/zhuceBtn"
+        android:layout_marginTop="40dp"
         android:text="游客登录"/>
 </RelativeLayout>

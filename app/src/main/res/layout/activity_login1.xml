@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,12 +9,37 @@
     tools:context=".ui.sliding.login.Login1Activity">
 
     <ImageView
-        android:layout_width="150px"
-        android:layout_height="150px"
+        android:id="@+id/login_back"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/login_back"/>
+
+    <ImageView
+        android:layout_width="120px"
+        android:layout_height="120px"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="90dp"
         android:src="@drawable/homepage" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/qqlogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/weixinlogin"/>
+
+    <ImageView
+        android:id="@+id/qqlogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/otherlogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/qqlogin"/>
 
     <TextView
         android:id="@+id/otherlogin"
@@ -22,6 +48,7 @@
         android:textColor="#fff"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="43dp"
+        android:layout_marginBottom="50dp"
         android:text="其他登陆方式" />
+
 </RelativeLayout>

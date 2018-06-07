@@ -4,29 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".MainActivity">
 
     <LinearLayout
         android:id="@+id/lay"
         android:layout_alignParentTop="true"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#3399FF"
-        android:orientation="horizontal"
-        >
+        android:layout_height="60dp"
+        android:background="#03A9F4"
+        android:orientation="horizontal">
+
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/name_image"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:roundAsCircle="true"
-            />
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:padding="10dp"
+            android:layout_gravity="center_vertical"
+            app:roundAsCircle="true" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="8"
+            android:textColor="#fff"
             android:text="推荐"
-
             android:gravity="center"
             />
         <ImageView
@@ -35,7 +36,7 @@
             android:layout_height="30dp"
             android:layout_gravity="center"
             android:layout_marginRight="10dp"
-            android:src="@drawable/biji"
+            android:src="@drawable/xiugai"
 
             />
     </LinearLayout>
@@ -62,8 +63,8 @@
             android:layout_weight="1"
             android:text="推荐"
             android:button="@null"
-            android:gravity="center"
-            />
+            android:gravity="center" />
+
         <RadioButton
             android:id="@+id/btn2"
             android:layout_width="0dp"
@@ -71,8 +72,8 @@
             android:layout_weight="1"
             android:text="段子"
             android:button="@null"
-            android:gravity="center"
-            />
+            android:gravity="center" />
+
         <RadioButton
             android:id="@+id/btn3"
             android:layout_width="0dp"
@@ -80,11 +81,6 @@
             android:layout_weight="1"
             android:text="视频"
             android:button="@null"
-            android:gravity="center"
-            />
-
+            android:gravity="center" />
     </RadioGroup>
-
-
-
 </RelativeLayout>

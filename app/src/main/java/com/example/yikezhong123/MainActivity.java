@@ -15,8 +15,6 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.yikezhong123.ui.Recommend.TuiJianFragment;
-import com.example.yikezhong123.ui.duanzi.Frag_duanzi;
-import com.example.yikezhong123.ui.shiping.Frag_shiping;
 import com.example.yikezhong123.ui.sliding.login.Login1Activity;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
@@ -30,7 +28,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FrameLayout mFlout;
     private SimpleDraweeView my_head;
     private TextView my_name;
-    private int currentIndex = 1;
     /**
      * 推荐
      */
@@ -45,10 +42,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private RadioButton mBtn3;
     private RadioGroup mRg;
     private SlidingMenu menu;
-    private LinearLayout lin;
-    private TuiJianFragment tuiJianFragment;
-    private Frag_duanzi frag_duanzi;
-    private Frag_shiping frag_shiping;
+
+    private LinearLayout lin1;
 
 
     @Override
@@ -57,58 +52,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         initView();
         fragmentManager = getSupportFragmentManager();
-         tuiJianFragment = new TuiJianFragment();
-          frag_duanzi = new Frag_duanzi();
-        frag_shiping = new Frag_shiping();
-
+        TuiJianFragment tuiJianFragment = new TuiJianFragment();
         fragmentManager.beginTransaction().replace(R.id.flout, tuiJianFragment).commit();
         getMenu();
-        //设置点击事件
+       // 设置点击事件
         setLisenter();
 
     }
 
-
-
     private void getMenu() {
         menu = new SlidingMenu(this);
         menu.setMode(SlidingMenu.LEFT);
-       /* //滑动显示的布局文件
-        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);*/
+       //滑动显示的布局文件
+        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
         //触摸哪里可以发生滑动
         menu.attachToActivity(this, SlidingMenu.SLIDING_WINDOW);
         //屏幕宽度
-        int v = (int) (getResources().getDisplayMetrics().widthPixels * 0.66);
+        int v = (int) (getResources().getDisplayMetrics().widthPixels * 0.76);
         //侧滑菜单和主界面相融合
         menu.setBehindWidth(v);
         //侧滑菜单显示的宽度
         menu.setFadeDegree(0.35f);
 
         //为侧滑菜单设置布局
-        /* menu.setMenu(R.layout.sliding_left);*/
-
-
         View lview = LayoutInflater.from(MainActivity.this).inflate(R.layout.sliding_left, null);
         menu.setMenu(lview);
-        //查找侧滑菜单里面的
-       /* my_head = menu.findViewById(R.id.my_head);
-        my_name = menu.findViewById(R.id.my_name);*/
-        lin = menu.findViewById(R.id.lin1);
-        lin.setOnClickListener(new View.OnClickListener() {
+        //查找侧滑菜单里面的控件
+        lin1 = menu.findViewById(R.id.lin1);
+        lin1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Login1Activity.class);
                 startActivity(intent);
-
             }
         });
-        /* my_head.setOnClickListener(this);*/
     }
-
-
-
     public void setLisenter() {
-        //侧拉
         mNameImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,40 +98,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
-        //底部导航
-
-        mRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId) {
-                    case R.id.btn1:
-                        //首页
-                        if (currentIndex == 1) {
-                            return;
-                        }
-                        currentIndex = 1;
-                        fragmentManager.beginTransaction().replace(R.id.flout,tuiJianFragment ).commit();
-                        break;
-                    case R.id.btn2:
-                        if (currentIndex == 2) {
-                            return;
-                        }
-                        currentIndex = 2;
-                        fragmentManager.beginTransaction().replace(R.id.flout, frag_duanzi).commit();
-                        break;
-                    case R.id.btn3:
-                        if (currentIndex == 3) {
-                            return;
-                        }
-                        currentIndex = 3;
-                        fragmentManager.beginTransaction().replace(R.id.flout, frag_shiping).commit();
-                        break;
-
-
-                }
-            }
-        });
-
     }
 
     private void initView() {
@@ -168,8 +113,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mNameImage.setImageURI(uri);
         mNameImage.setOnClickListener(this);
     }
-
-
 
     @Override
     public void onClick(View v) {
@@ -196,3 +139,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }*/
 }
+

@@ -50,7 +50,7 @@
                     android:layout_height="50px"
                     android:layout_marginTop="5dp"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="120px"
+                    android:layout_marginLeft="100px"
                     android:src="@drawable/sex" />
             </LinearLayout>
 
@@ -61,163 +61,163 @@
                 android:text="编辑个性签名"
                 android:textColor="#ffffff"
                 android:textSize="18px" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:background="#ffffff"
-        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0px"
-            android:layout_weight="6"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:background="#ffffff"
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/guanzhu"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:layout_marginLeft="30px"
-                android:orientation="horizontal">
+                android:layout_height="0px"
+                android:layout_weight="6"
+                android:background="#ffffff"
+                android:orientation="vertical">
 
-                <ImageView
-                    android:layout_width="30px"
-                    android:layout_height="30px"
-                    android:src="@drawable/xin" />
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/guanzhu"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="25px"
-                    android:text="我的关注"
-                    android:textSize="20px" />
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:padding="10dp"
+                    android:layout_marginLeft="30px"
+                    android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="20px"
-                        android:layout_height="20px"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="5dp"
-                        android:src="@drawable/oneregth"
-                        android:layout_alignParentRight="true"/>
-                </RelativeLayout>
+                        android:layout_width="30px"
+                        android:layout_height="30px"
+                        android:src="@drawable/xin" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="25px"
+                        android:text="我的关注"
+                        android:textSize="20px" />
 
-            <LinearLayout
-                android:id="@+id/shoucang"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30px"
-                android:padding="10dp"
-                android:orientation="horizontal">
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
-                <ImageView
-                    android:layout_width="30px"
-                    android:layout_height="30px"
-                    android:src="@drawable/xing" />
+                        <ImageView
+                            android:layout_width="20px"
+                            android:layout_height="20px"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="5dp"
+                            android:src="@drawable/oneregth"
+                            android:layout_alignParentRight="true"/>
+                    </RelativeLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/shoucang"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="25px"
-                    android:text="我的收藏"
-                    android:textSize="20px" />
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_marginLeft="30px"
+                    android:padding="10dp"
+                    android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="20px"
-                        android:layout_height="20px"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="5dp"
-                        android:src="@drawable/oneregth"
-                        android:layout_alignParentRight="true"/>
-                </RelativeLayout>
-            </LinearLayout>
+                        android:layout_width="30px"
+                        android:layout_height="30px"
+                        android:src="@drawable/xing" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="25px"
+                        android:text="我的收藏"
+                        android:textSize="20px" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="20px"
+                            android:layout_height="20px"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="5dp"
+                            android:src="@drawable/oneregth"
+                            android:layout_alignParentRight="true"/>
+                    </RelativeLayout>
+                </LinearLayout>
 
 
-            <LinearLayout
-                android:id="@+id/sousuo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30px"
-                android:padding="10dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="30px"
-                    android:layout_height="30px"
-                    android:src="@drawable/jing" />
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/sousuo"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="25px"
-                    android:text="搜索好友"
-                    android:textSize="20px" />
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_marginLeft="30px"
+                    android:padding="10dp"
+                    android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="20px"
-                        android:layout_height="20px"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="5dp"
-                        android:src="@drawable/oneregth"
-                        android:layout_alignParentRight="true"/>
-                </RelativeLayout>
-            </LinearLayout>
+                        android:layout_width="30px"
+                        android:layout_height="30px"
+                        android:src="@drawable/jing" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30px"
-                android:padding="10dp"
-                android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="25px"
+                        android:text="搜索好友"
+                        android:textSize="20px" />
 
-                <ImageView
-                    android:layout_width="30px"
-                    android:layout_height="30px"
-                    android:src="@drawable/ling" />
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                        <ImageView
+                            android:layout_width="20px"
+                            android:layout_height="20px"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="5dp"
+                            android:src="@drawable/oneregth"
+                            android:layout_alignParentRight="true"/>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="25px"
-                    android:text="消息通知"
-                    android:textSize="20px" />
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_marginLeft="30px"
+                    android:padding="10dp"
+                    android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="20px"
-                        android:layout_height="20px"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="5dp"
-                        android:src="@drawable/oneregth"
-                        android:layout_alignParentRight="true"/>
-                </RelativeLayout>
-            </LinearLayout>
+                        android:layout_width="30px"
+                        android:layout_height="30px"
+                        android:src="@drawable/ling" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="25px"
+                        android:text="消息通知"
+                        android:textSize="20px" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="20px"
+                            android:layout_height="20px"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="5dp"
+                            android:src="@drawable/oneregth"
+                            android:layout_alignParentRight="true"/>
+                    </RelativeLayout>
+                </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -295,20 +295,20 @@
                 android:layout_marginTop="13px"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:layout_width="45px"
-                    android:layout_height="45px"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/shezhi" />
+                    <ImageView
+                        android:layout_width="45px"
+                        android:layout_height="45px"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/shezhi" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:gravity="center"
-                    android:layout_marginTop="20dp"
-                    android:text="设置"
-                    android:textSize="20px" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:text="设置"
+                        android:textSize="20px" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
