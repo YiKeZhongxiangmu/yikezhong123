@@ -31,17 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private SimpleDraweeView my_head;
     private TextView my_name;
     private int currentIndex = 1;
-    /**
-     * 推荐
-     */
-    private RadioButton mBtn1;
-    /**
-     * 段子
-     */
-    private RadioButton mBtn2;
-    /**
-     * 视频
-     */
+
     private RadioButton mBtn3;
     private RadioGroup mRg;
     private SlidingMenu menu;
@@ -49,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TuiJianFragment tuiJianFragment;
     private Frag_duanzi frag_duanzi;
     private Frag_shiping frag_shiping;
+    private BottomBar bottomBar;
 
 
     @Override
@@ -56,12 +47,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
-        fragmentManager = getSupportFragmentManager();
-         tuiJianFragment = new TuiJianFragment();
-          frag_duanzi = new Frag_duanzi();
-        frag_shiping = new Frag_shiping();
+        bottomBar=findViewById(R.id.bottom_bar);
+        //底部导航
+        bottomBar.setContainer(R.id.flout)
+                .setTitleBeforeAndAfterColor("#999999", "#ff5d5e")
+                .addItem(TuiJianFragment.class,"推荐",R.drawable.tuijian1,
+                        R.drawable.tuijian2)
+                .addItem(Frag_duanzi.class,"段子",R.drawable.duanzi1,
+                        R.drawable.duanzi2)
+                .addItem(Frag_shiping.class,"视屏",R.drawable.shiping1,
+                        R.drawable.shipin2)
+                .build();
 
-        fragmentManager.beginTransaction().replace(R.id.flout, tuiJianFragment).commit();
+
+
         getMenu();
         //设置点击事件
         setLisenter();
@@ -119,39 +118,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
-        //底部导航
 
-        mRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId) {
-                    case R.id.btn1:
-                        //首页
-                        if (currentIndex == 1) {
-                            return;
-                        }
-                        currentIndex = 1;
-                        fragmentManager.beginTransaction().replace(R.id.flout,tuiJianFragment ).commit();
-                        break;
-                    case R.id.btn2:
-                        if (currentIndex == 2) {
-                            return;
-                        }
-                        currentIndex = 2;
-                        fragmentManager.beginTransaction().replace(R.id.flout, frag_duanzi).commit();
-                        break;
-                    case R.id.btn3:
-                        if (currentIndex == 3) {
-                            return;
-                        }
-                        currentIndex = 3;
-                        fragmentManager.beginTransaction().replace(R.id.flout, frag_shiping).commit();
-                        break;
-
-
-                }
-            }
-        });
 
     }
 
@@ -160,10 +127,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mChuangzuo = (ImageView) findViewById(R.id.chuangzuo);
         mLay = (LinearLayout) findViewById(R.id.lay);
         mFlout = (FrameLayout) findViewById(R.id.flout);
-        mBtn1 = (RadioButton) findViewById(R.id.btn1);
-        mBtn2 = (RadioButton) findViewById(R.id.btn2);
-        mBtn3 = (RadioButton) findViewById(R.id.btn3);
-        mRg = (RadioGroup) findViewById(R.id.rg);
+
         Uri uri = Uri.parse("http://tx.haiqq.com/uploads/allimg/160812/102GJ358-9.jpg");
         mNameImage.setImageURI(uri);
         mNameImage.setOnClickListener(this);
