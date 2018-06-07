@@ -4,48 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".MainActivity">
+
     <LinearLayout
         android:id="@+id/lay"
         android:layout_alignParentTop="true"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="65dp"
         android:background="#3399FF"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
+
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/name_image"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:roundAsCircle="true"
-            />
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            app:roundAsCircle="true" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="8"
             android:text="推荐"
             android:textColor="#ffffff"
-            android:textSize="20sp"
-            android:gravity="center"
-            />
+            android:textSize="22sp"
+            android:gravity="center" />
+
         <ImageView
             android:id="@+id/chuangzuo"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
             android:layout_marginRight="10dp"
-            android:src="@drawable/biji"
+            android:src="@drawable/biji" />
 
-            />
     </LinearLayout>
 
     <FrameLayout
         android:id="@+id/flout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/lay"
-        ></FrameLayout>
+        android:layout_below="@+id/lay"></FrameLayout>
 
 
     <com.example.yikezhong123.BottomBar
@@ -55,8 +55,4 @@
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:layout_gravity="bottom" />
-
-
-
-
 </RelativeLayout>

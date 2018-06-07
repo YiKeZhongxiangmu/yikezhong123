@@ -2,7 +2,9 @@ package com.example.yikezhong123;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -59,16 +61,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .addItem(Frag_shiping.class,"视屏",R.drawable.shiping1,
                         R.drawable.shipin2)
                 .build();
-
-
-
         getMenu();
         //设置点击事件
         setLisenter();
 
     }
-
-
 
     private void getMenu() {
         menu = new SlidingMenu(this);
@@ -78,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //触摸哪里可以发生滑动
         menu.attachToActivity(this, SlidingMenu.SLIDING_WINDOW);
         //屏幕宽度
-        int v = (int) (getResources().getDisplayMetrics().widthPixels * 0.66);
+        int v = (int) (getResources().getDisplayMetrics().widthPixels * 0.80);
         //侧滑菜单和主界面相融合
         menu.setBehindWidth(v);
         //侧滑菜单显示的宽度
@@ -106,7 +103,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-
     public void setLisenter() {
         //侧拉
         mNameImage.setOnClickListener(new View.OnClickListener() {
@@ -120,7 +116,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-
     }
 
     private void initView() {
@@ -133,8 +128,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mNameImage.setImageURI(uri);
         mNameImage.setOnClickListener(this);
     }
-
-
 
     @Override
     public void onClick(View v) {

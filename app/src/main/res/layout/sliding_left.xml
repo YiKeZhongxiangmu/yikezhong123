@@ -41,7 +41,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="25px"
-                    android:text="二狗子"
+                    android:text="蓝莓猫"
                     android:textColor="#ffffff"
                     android:textSize="28px" />
 

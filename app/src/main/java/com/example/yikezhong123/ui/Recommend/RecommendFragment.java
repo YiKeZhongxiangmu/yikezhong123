@@ -5,9 +5,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-
 import com.example.yikezhong123.Component.DaggerHttpComponent;
-import com.example.yikezhong123.Module.HttpModule;
 import com.example.yikezhong123.R;
 import com.example.yikezhong123.bean.AdBean;
 import com.example.yikezhong123.bean.JokesBean;
@@ -37,7 +35,6 @@ public  class RecommendFragment extends BaseFragment<GetAdPresenter> implements 
         DaggerHttpComponent.builder()
                 .build()
                 .inject(this);
-
     }
 
     @Override
