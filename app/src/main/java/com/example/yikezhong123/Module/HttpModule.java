@@ -5,6 +5,8 @@ import com.example.yikezhong123.net.AdApiService;
 import com.example.yikezhong123.net.Api;
 import com.example.yikezhong123.net.DuanZiApi;
 import com.example.yikezhong123.net.DuanZiApiService;
+import com.example.yikezhong123.net.HotVideosApi;
+import com.example.yikezhong123.net.HotVideosApiService;
 import com.example.yikezhong123.net.JokesApi;
 import com.example.yikezhong123.net.JokesApiService;
 import com.example.yikezhong123.net.MyInterceptor;
@@ -65,5 +67,17 @@ public class HttpModule {
                 .build();
         DuanZiApiService duanZiApiService = retrofit.create(DuanZiApiService.class);
         return DuanZiApi.getDuanZiApi(duanZiApiService);
+    }
+    @Provides
+    HotVideosApi provideHotVideosApi(OkHttpClient.Builder builder){
+        builder.addInterceptor(new MyInterceptor());
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Api.URL)
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(builder.build())
+                .build();
+        HotVideosApiService hotVideosApiService = retrofit.create(HotVideosApiService.class);
+        return HotVideosApi.getHotVideosApi(hotVideosApiService);
     }
 }

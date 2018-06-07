@@ -4,6 +4,8 @@ import com.example.yikezhong123.Module.HttpModule;
 import com.example.yikezhong123.ui.Recommend.GuanZhuFragment;
 import com.example.yikezhong123.ui.Recommend.RecommendFragment;
 import com.example.yikezhong123.ui.duanzi.Frag_duanzi;
+import com.example.yikezhong123.ui.shiping.HotFragment;
+import com.example.yikezhong123.ui.shiping.NearFragment;
 
 import dagger.Component;
 
@@ -15,5 +17,8 @@ public interface HttpComponent {
    void inject(GuanZhuFragment guanZhuFragment);
 
    void inject(Frag_duanzi duanZiFragment);
+   void inject(HotFragment hotFragment);
+
+   void inject(NearFragment nearFragment);
 
 }
