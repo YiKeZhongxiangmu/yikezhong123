@@ -65,8 +65,14 @@
             </intent-filter>
 
         </activity>
+        <activity android:name=".ui.chhuangzuo.czduanzi.Cz_Duanziactivity" />
+        <activity android:name=".ui.chhuangzuo.czshipin.Cz_ShipinActivity" />
+        <activity android:name=".ui.shiping.VideoActivity" />
         <activity android:name=".ui.sliding.login.Login1Activity" />
         <activity android:name=".ui.sliding.login.Login2Activity" />
-        <activity android:name=".ui.sliding.login.ZhuceActivity"></activity>
+        <activity android:name=".ui.sliding.login.ZhuceActivity"/>
+        <activity android:name=".ui.chhuangzuo.ChuangzuoActivity">
+
+        </activity>
     </application>
 </manifest>

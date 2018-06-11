@@ -17,6 +17,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.yikezhong123.ui.Recommend.TuiJianFragment;
+import com.example.yikezhong123.ui.chhuangzuo.ChuangzuoActivity;
 import com.example.yikezhong123.ui.duanzi.Frag_duanzi;
 import com.example.yikezhong123.ui.shiping.Frag_shiping;
 import com.example.yikezhong123.ui.sliding.login.Login1Activity;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Frag_duanzi frag_duanzi;
     private Frag_shiping frag_shiping;
     private BottomBar bottomBar;
+    private LinearLayout guan;
 
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -50,6 +52,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
+
+        //创作
+     mChuangzuo.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View v) {
+             Intent intent = new Intent(MainActivity.this, ChuangzuoActivity.class);
+             startActivity(intent);
+         }
+     });
+
         bottomBar=findViewById(R.id.bottom_bar);
         //底部导航
         bottomBar.setContainer(R.id.flout)
@@ -91,6 +103,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
        /* my_head = menu.findViewById(R.id.my_head);
         my_name = menu.findViewById(R.id.my_name);*/
         lin = menu.findViewById(R.id.lin1);
+
         lin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
