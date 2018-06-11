@@ -1,11 +1,8 @@
 package com.example.yikezhong123.ui.duanzi;
 
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.example.yikezhong123.Component.DaggerHttpComponent;
 import com.example.yikezhong123.R;
@@ -46,7 +43,6 @@ public class Frag_duanzi extends BaseFragment<DuanZiPresenter> implements DuanZi
     public void onSuccess(DuanZiBean duanZiBean) {
         DuanZiAdapter duanZiAdapter = new DuanZiAdapter(getContext(), duanZiBean.getData());
         mRlv.setAdapter(duanZiAdapter);
-
     }
 }
 

@@ -1,4 +1,4 @@
-package com.example.yikezhong123.ui.sliding.login;
+package com.example.yikezhong123.ui.sliding.mainlogin;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,30 +8,38 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.yikezhong123.R;
+import com.example.yikezhong123.ui.sliding.mainlogin.login.LoginActivity;
 
-public class Login1Activity extends AppCompatActivity {
+public class MainLoginActivity extends AppCompatActivity {
 
-    private TextView ol;
+    private TextView otherlogin;
     private ImageView login_back;
+    private ImageView weixinlogin;
+    private ImageView qqlogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login1);
+        setContentView(R.layout.mainlogin_layout);
         initView();
 
-        ol = findViewById(R.id.otherlogin);
-        ol.setOnClickListener(new View.OnClickListener() {
+
+        otherlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Login1Activity.this, Login2Activity.class);
+                Intent intent = new Intent(MainLoginActivity.this, LoginActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
 
     private void initView() {
         login_back=(ImageView) findViewById(R.id.login_back);
+        otherlogin = findViewById(R.id.otherlogin);
+        weixinlogin=(ImageView) findViewById(R.id.weixinlogin);
+        qqlogin=(ImageView) findViewById(R.id.qqlogin);
+
         login_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -39,5 +47,4 @@ public class Login1Activity extends AppCompatActivity {
             }
         });
     }
-
 }

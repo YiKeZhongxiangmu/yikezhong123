@@ -29,8 +29,6 @@ public abstract class BaseFragment<T extends BaseContract.BasePresenter> extends
         if (mPresenter != null) {
             mPresenter.attchView(this);
         }
-
-
     }
 
 
@@ -43,8 +41,6 @@ public abstract class BaseFragment<T extends BaseContract.BasePresenter> extends
         if (bind != null) {
             bind.unbind();
         }
-
-
     }
 
 

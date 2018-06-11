@@ -1,32 +1,28 @@
-package com.example.yikezhong123.ui.sliding.login;
+package com.example.yikezhong123.ui.sliding.customviews.LeftItemlist;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.yikezhong123.R;
 
-public class ZhuceActivity extends AppCompatActivity {
+public class TongzhiActivity extends AppCompatActivity {
 
-    private TextView zhuceBtn;
-    private ImageView login_back;
+    private TextView back_text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_zhuce);
+        setContentView(R.layout.tongzhi_activity_layout);
 
         initView();
-
     }
 
     private void initView() {
-        zhuceBtn=(TextView) findViewById(R.id.zhuceBtn);
-        login_back=(ImageView) findViewById(R.id.login_back);
+        back_text=(TextView) findViewById(R.id.back_text);
 
-        login_back.setOnClickListener(new View.OnClickListener() {
+        back_text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();

@@ -10,6 +10,8 @@ import com.example.yikezhong123.net.HotVideosApiService;
 import com.example.yikezhong123.net.JokesApi;
 import com.example.yikezhong123.net.JokesApiService;
 import com.example.yikezhong123.net.MyInterceptor;
+import com.example.yikezhong123.net.ProjectApi;
+import com.example.yikezhong123.net.ProjectApiService;
 
 import java.util.concurrent.TimeUnit;
 
@@ -67,6 +69,19 @@ public class HttpModule {
                 .build();
         DuanZiApiService duanZiApiService = retrofit.create(DuanZiApiService.class);
         return DuanZiApi.getDuanZiApi(duanZiApiService);
+    }
+
+    @Provides
+    ProjectApi provideProjectApi(OkHttpClient.Builder builder){
+        builder.addInterceptor(new MyInterceptor());
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Api.URL)
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(builder.build())
+                .build();
+        ProjectApiService projectApiService = retrofit.create(ProjectApiService.class);
+        return ProjectApi.getProjectApi(projectApiService);
     }
     @Provides
     HotVideosApi provideHotVideosApi(OkHttpClient.Builder builder){

@@ -1,11 +1,8 @@
 package com.example.yikezhong123.ui.Recommend;
 
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.yikezhong123.Component.DaggerHttpComponent;
@@ -59,6 +56,4 @@ public class GuanZhuFragment extends BaseFragment<GetAdPresenter> implements Get
         mRlv.setAdapter(recommendAdapter);
 
     }
-
-
 }

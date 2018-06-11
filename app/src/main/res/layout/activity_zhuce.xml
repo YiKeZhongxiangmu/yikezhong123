@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/drawerlayout_background1"
-    tools:context=".ui.sliding.login.ZhuceActivity">
+    tools:context=".ui.sliding.mainlogin.reg.ZhuceActivity">
 
     <ImageView
         android:id="@+id/login_back"

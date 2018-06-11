@@ -20,7 +20,12 @@ import com.example.yikezhong123.ui.Recommend.TuiJianFragment;
 import com.example.yikezhong123.ui.chhuangzuo.ChuangzuoActivity;
 import com.example.yikezhong123.ui.duanzi.Frag_duanzi;
 import com.example.yikezhong123.ui.shiping.Frag_shiping;
-import com.example.yikezhong123.ui.sliding.login.Login1Activity;
+import com.example.yikezhong123.ui.sliding.customviews.LeftItemlist.GuanzhuActivity;
+import com.example.yikezhong123.ui.sliding.customviews.LeftItemlist.ShouchangActivity;
+import com.example.yikezhong123.ui.sliding.customviews.LeftItemlist.SousuoActivity;
+import com.example.yikezhong123.ui.sliding.customviews.LeftItemlist.TongzhiActivity;
+import com.example.yikezhong123.ui.sliding.customviews.SettingActivity;
+import com.example.yikezhong123.ui.sliding.mainlogin.MainLoginActivity;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
@@ -43,6 +48,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Frag_duanzi frag_duanzi;
     private Frag_shiping frag_shiping;
     private BottomBar bottomBar;
+    private LinearLayout guanzhu;
+    private LinearLayout shoucang;
+    private LinearLayout sousuo;
+    private LinearLayout tongzhi;
+    private LinearLayout shezhi;
     private LinearLayout guan;
 
 
@@ -77,6 +87,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //设置点击事件
         setLisenter();
 
+        shezhi=menu.findViewById(R.id.shezhi);
+        //设置
+        shezhi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent inte=new Intent(MainActivity.this,SettingActivity.class);
+                startActivity(inte);
+            }
+        });
     }
 
     private void getMenu() {
@@ -102,19 +121,60 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //查找侧滑菜单里面的
        /* my_head = menu.findViewById(R.id.my_head);
         my_name = menu.findViewById(R.id.my_name);*/
+       //头像进入登录页面点击事件
         lin = menu.findViewById(R.id.lin1);
-
         lin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Login1Activity.class);
+                Intent intent = new Intent(MainActivity.this, MainLoginActivity.class);
                 startActivity(intent);
 
             }
         });
         /* my_head.setOnClickListener(this);*/
-    }
 
+        //我的关注点击事件
+        guanzhu=menu.findViewById(R.id.guanzhu);
+        guanzhu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent inte=new Intent(MainActivity.this,GuanzhuActivity.class);
+                startActivity(inte);
+            }
+        });
+
+        //我的收藏点击事件
+        shoucang=menu.findViewById(R.id.shoucang);
+        shoucang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent inte=new Intent(MainActivity.this,ShouchangActivity.class);
+                startActivity(inte);
+            }
+        });
+
+        //搜索好友点击事件
+        sousuo=menu.findViewById(R.id.sousuo);
+        sousuo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent inte1=new Intent(MainActivity.this,SousuoActivity.class);
+                startActivity(inte1);
+            }
+        });
+
+        //消息通知击事件
+        tongzhi=menu.findViewById(R.id.tongzhi);
+        tongzhi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent inte1=new Intent(MainActivity.this,TongzhiActivity.class);
+                startActivity(inte1);
+            }
+        });
+
+
+    }
 
     public void setLisenter() {
         //侧拉

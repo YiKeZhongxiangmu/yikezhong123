@@ -60,8 +60,6 @@ public  class RecommendFragment extends BaseFragment<GetAdPresenter> implements 
         mBanner.setImages(images);
         mBanner.start();
 
-
-
     }
 
     @Override
@@ -75,6 +73,4 @@ public  class RecommendFragment extends BaseFragment<GetAdPresenter> implements 
         super.onDestroy();
         mBanner.stopAutoPlay();
     }
-
-
 }

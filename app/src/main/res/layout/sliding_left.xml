@@ -104,6 +104,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
+                            android:id="@+id/guan"
                             android:layout_width="20px"
                             android:layout_height="20px"
                             android:layout_marginRight="10dp"
@@ -111,7 +112,6 @@
                             android:src="@drawable/oneregth"
                             android:layout_alignParentRight="true"/>
                     </RelativeLayout>
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -186,6 +186,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/tongzhi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30px"
@@ -273,6 +274,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/zuoping"
                     android:layout_width="45px"
                     android:layout_height="45px"
                     android:layout_gravity="center_horizontal"
@@ -288,6 +290,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/shezhi"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

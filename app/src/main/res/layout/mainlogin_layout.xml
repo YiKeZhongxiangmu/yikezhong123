@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/drawerlayout_background1"
-    tools:context=".ui.sliding.login.Login1Activity">
+    tools:context=".ui.sliding.mainlogin.MainLoginActivity">
 
     <ImageView
         android:id="@+id/login_back"
